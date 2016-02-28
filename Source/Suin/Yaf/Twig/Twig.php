@@ -1,11 +1,11 @@
 <?php
 
-namespace Suin\Yaf\Twig;
+namespace Lovelock\Yaf\Twig;
 
 use \Twig_Loader_Filesystem;
 use \Twig_Environment;
 
-class Twig implements \Yaf_View_Interface
+class Twig implements \Yaf\View_Interface
 {
 	/** @var \Twig_Loader_Filesystem */
 	protected $loader;
@@ -69,13 +69,20 @@ class Twig implements \Yaf_View_Interface
 	}
 
 	/**
-	 * @param string $name
+	 * If $name is a k=>v array, it will assign it to template
+	 * @param string | array $name 
 	 * @param mixed $value
 	 * @return bool
 	 */
 	public function assign($name, $value = null)
 	{
-		$this->variables[$name] = $value;
+		if (is_array($name)) {
+			foreach ($name as $k => $v) {
+				$this->variables[$k] = $v;
+			}
+		} else {
+			$this->variables[$name] = $value;
+		}
 	}
 
 	/**
