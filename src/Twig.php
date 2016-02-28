@@ -1,7 +1,5 @@
 <?php
 
-namespace Lovelock\Yaf\Twig;
-
 use \Twig_Loader_Filesystem;
 use \Twig_Environment;
 
@@ -70,7 +68,7 @@ class Twig implements \Yaf\View_Interface
 
 	/**
 	 * If $name is a k=>v array, it will assign it to template
-	 * @param string | array $name 
+	 * @param string | array $name
 	 * @param mixed $value
 	 * @return bool
 	 */
