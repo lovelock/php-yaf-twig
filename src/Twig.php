@@ -1,9 +1,12 @@
 <?php
 
+namespace Lovelock\Yaf;
+
 use \Twig_Loader_Filesystem;
 use \Twig_Environment;
+use Yaf\View_Interface;
 
-class Twig implements \Yaf\View_Interface
+class Twig implements View_Interface
 {
 	/** @var \Twig_Loader_Filesystem */
 	protected $loader;
