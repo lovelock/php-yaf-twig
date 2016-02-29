@@ -16,6 +16,6 @@
 		"twig/twig": ">=1.9.1"
 	},
 	"autoload": {
-		"psr-4": { "Lovelock\\Yaf\\": "src/" }
+		"psr-4": { "Lovelock\\Yaf\\": "" }
 	}
 }
