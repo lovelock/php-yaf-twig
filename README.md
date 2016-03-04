@@ -1,6 +1,6 @@
-# \Suin\Yaf\Twig
+# yaf-twig-adapter
 
-Twig extension for Yet Another Framework.
+Twig Adapter for Yaf PHP Framework with namespace enabled.
 
 
 ## Installation
@@ -12,7 +12,7 @@ At first create `composer.json` file:
 ```json
 {
 	"require": {
-		"suin/php-yaf-twig": ">=1.0"
+		"lovelock/php-yaf-twig": ">=1.0"
 	}
 }
 ```
@@ -34,17 +34,20 @@ Add to `Bootstrap.php`:
 ```php
 <?php
 
-use \Suin\Yaf\Twig\Twig;
+use \Yaf\Bootstrap_Abstract;
+use \Yaf\Dispatcher;
+use \Yaf\Application;
+use \Lovelock\Yaf\Twig;
 
-class Bootstrap extends Yaf_Bootstrap_Abstract
+class Bootstrap extends Bootstrap_Abstract
 {
 
 	/**
-	 * @param Yaf_Dispatcher $dispatcher
+	 * @param Dispatcher $dispatcher
 	 */
-	protected function _initTwig(Yaf_Dispatcher $dispatcher)
+	protected function _initTwig(Dispatcher $dispatcher)
 	{
-		$config = Yaf_Application::app()->getConfig()
+		$config = Application::app()->getConfig()
 		$dispatcher->setView(new Twig(APP_PATH.'views', $config->twig->toArray()));
 	}
 }
