@@ -1,5 +1,5 @@
 # yaf-twig-adapter
-
+[![Build Status](https://travis-ci.org/lovelock/yaf-twig-adapter.svg?branch=master)](https://travis-ci.org/lovelock/yaf-twig-adapter)
 Twig Adapter for Yaf PHP Framework with namespace enabled.
 
 
